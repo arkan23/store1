@@ -1,8 +1,10 @@
 const path = require('path');
 const process = require('process');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
-    mode: 'none',
+    mode: 'development',
     entry: {
         app: path.join(__dirname, 'src', 'index.tsx')
     },
@@ -17,16 +19,16 @@ module.exports = {
                 use: 'ts-loader',
                 exclude: '/node_modules/'
             },
-            // {
-            //     test: /\.(s(a|c)ss)$/,
-            //     use: ['style-loader','css-loader', 'sass-loader']
-            // },
-            // {
-            //     test: /\.(woff|woff2|eot|ttf|svg|jpg|png)$/,
-            //     use: {
-            //         loader: 'url-loader',
-            //     },
-            // },
+            {
+                test: /\.(s(a|c)ss)$/,
+                use: ['style-loader','css-loader', 'sass-loader']
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|svg|jpg|png)$/,
+                use: {
+                    loader: 'url-loader',
+                },
+            },
         ],
     },
     output: {
@@ -34,6 +36,9 @@ module.exports = {
         path: path.resolve(__dirname, 'dist')
     },
     plugins: [
+        new webpack.ProvidePlugin({
+            process: 'process/browser',
+        }),
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'public', 'index.html')
         })

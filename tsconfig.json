@@ -3,11 +3,12 @@
     "target": "es5",
     "sourceMap": true,
     "outDir": "./dist",
-    "module": "commonjs",
+    "module": "ESNext",
     "jsx": "react",
     "noImplicitAny": true,
     "allowSyntheticDefaultImports": true
   },
+  "include": ["src/**/*"],
   "exclude": [
     "node_modules"
   ]

@@ -1,3 +1,14 @@
+/* main import block start */
+@import 'font';
+
+/* main import block end */
+
 .Main {
+  font-family: Roboto-Medium, sans-serif;
   color: aqua;
+}
+
+.Main-Test {
+  font-family: Stick, sans-serif;
+  color: #2f00ff;
 }
