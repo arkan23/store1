@@ -1,14 +1,16 @@
 /* main import block start */
 @import 'font';
+@import 'src/style/normalize';
+@import 'src/style/color';
 
 /* main import block end */
 
 .Main {
   font-family: Roboto-Medium, sans-serif;
-  color: aqua;
+  color: $indigo300;
 }
 
 .Main-Test {
   font-family: Stick, sans-serif;
-  color: #2f00ff;
+  color: $red500;
 }
