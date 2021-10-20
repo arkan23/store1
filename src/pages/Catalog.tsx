@@ -1,12 +1,13 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useContext} from 'react'
 import {observer} from "mobx-react";
-import catalogState from './../store/Catalog'
+
+import {AppContext} from '../store'
 
 const Catalog = observer(() => {
-
+    const appStore = useContext(AppContext)
     return <div className={'CatalogWrapper'}>
-        <div onClick={() => catalogState.addCounter()}>WWWWW</div>
-        {catalogState.counter}
+        <div onClick={() => appStore.catalogStore.addCounter()}>WWWWW</div>
+        {appStore.catalogStore.counter}
         Catalog
     </div>
 })

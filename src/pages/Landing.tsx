@@ -1,9 +1,14 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import {observer} from "mobx-react";
 
-const Landing = () => {
+import {AppContext} from "../store";
+
+const Landing = observer(() => {
+    const appStore = useContext(AppContext)
+    console.log(appStore)
     return <div className={'LandingWrapper'}>
         Langing
     </div>
-}
+})
 
 export default Landing
