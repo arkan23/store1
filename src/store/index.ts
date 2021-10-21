@@ -9,6 +9,8 @@ import HomeStore from "./pages/Home";
 
 import RouteStore from "./Route";
 
+import {defaultValues} from './Models'
+
 // Set store logger
 export const enableStoreLogging = () => {
     // optional
@@ -44,9 +46,9 @@ export class RootStore {
 
 // FIXME add default store value
 export const AppContext = createContext<RootStore>(
-{catalogStore: new CatalogStore({} as any),
-        authorizeStore: new AuthorizeStore({} as any),
-        landingStore: new LandingStore({} as any),
-        homeStore: new HomeStore({} as any),
+{catalogStore: new CatalogStore(new RootStore()),
+        authorizeStore: new AuthorizeStore(new RootStore()),
+        landingStore: new LandingStore(new RootStore()),
+        homeStore: new HomeStore(new RootStore()),
         routeStore: new RouteStore(),
 })
