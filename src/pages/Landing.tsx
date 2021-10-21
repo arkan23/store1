@@ -7,7 +7,28 @@ const Landing = observer(() => {
     const appStore = useContext(AppContext)
     console.log(appStore)
     return <div className={'LandingWrapper'}>
-        Langing
+        <div className="container">
+            <div className="row">
+                <div className="col-4">
+                    Одна из трёх колонок
+                </div>
+                <div className="col-4">
+                    Одна из трёх колонок
+                </div>
+                <div className="col-4">
+                    Одна из трёх колонок
+                </div>
+                <div className="col-4">
+                    Одна из трёх колонок
+                </div>
+                <div className="col-4">
+                    Одна из трёх колонок
+                </div>
+                <div className="col-4">
+                    Одна из трёх колонок
+                </div>
+            </div>
+        </div>
     </div>
 })
 
