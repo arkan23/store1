@@ -1,5 +1,5 @@
 import {createContext} from 'react';
-// import {enableLogging} from "mobx-logger";
+import {enableLogging} from "mobx-logger";
 
 // import store component
 import CatalogStore from "./pages/Catalog";
@@ -20,7 +20,7 @@ export const enableStoreLogging = () => {
         compute: true
     }
 
-    //enableLogging(config);
+    enableLogging(config);
 }
 
 // Set context store
@@ -32,6 +32,7 @@ export class RootStore {
     homeStore: HomeStore
     // route store
     routeStore: RouteStore
+
     constructor() {
         this.catalogStore = new CatalogStore(this)
         this.authorizeStore = new AuthorizeStore(this)
@@ -47,5 +48,5 @@ export const AppContext = createContext<RootStore>(
         authorizeStore: new AuthorizeStore({} as any),
         landingStore: new LandingStore({} as any),
         homeStore: new HomeStore({} as any),
-        routeStore: new RouteStore({} as any),
+        routeStore: new RouteStore(),
 })
