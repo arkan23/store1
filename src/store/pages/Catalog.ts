@@ -1,13 +1,15 @@
-import {makeAutoObservable} from "mobx";
-import {RootStore} from '../index'
+import { makeAutoObservable } from "mobx";
+import { RootStore } from "../index";
 
 class CatalogStore {
-    counter: number = 0
+    counter = 0;
+    rootStore: RootStore;
     constructor(rootStore: RootStore) {
-        makeAutoObservable(this)
+        makeAutoObservable(this);
+        this.rootStore = rootStore;
     }
 
-    addCounter = () => this.counter++
+    addCounter = () => this.counter++;
 }
 
-export default CatalogStore
+export default CatalogStore;

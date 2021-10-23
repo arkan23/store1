@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const Authorize = () => {
-    return <div className={'CatalogWrapper'}>
-        Catalog
-    </div>
-}
+    return <div className={"CatalogWrapper"}>Catalog</div>;
+};
 
-export default Authorize
+export default Authorize;

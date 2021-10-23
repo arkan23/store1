@@ -1,5 +1,5 @@
-import {createContext} from 'react';
-import {enableLogging} from "mobx-logger";
+import { createContext } from "react";
+import { enableLogging } from "mobx-logger";
 
 // import store component
 import CatalogStore from "./pages/Catalog";
@@ -9,7 +9,7 @@ import HomeStore from "./pages/Home";
 
 import RouteStore from "./Route";
 
-import {defaultValues} from './Models'
+// import {defaultValues} from './Models'
 
 // Set store logger
 export const enableStoreLogging = () => {
@@ -19,36 +19,35 @@ export const enableStoreLogging = () => {
         action: true,
         reaction: true,
         transaction: true,
-        compute: true
-    }
+        compute: true,
+    };
 
     enableLogging(config);
-}
+};
 
 // Set context store
 export class RootStore {
     // page store
-    catalogStore: CatalogStore
-    authorizeStore: AuthorizeStore
-    landingStore: LandingStore
-    homeStore: HomeStore
+    catalogStore: CatalogStore;
+    authorizeStore: AuthorizeStore;
+    landingStore: LandingStore;
+    homeStore: HomeStore;
     // route store
-    routeStore: RouteStore
+    routeStore: RouteStore;
 
     constructor() {
-        this.catalogStore = new CatalogStore(this)
-        this.authorizeStore = new AuthorizeStore(this)
-        this.landingStore = new LandingStore(this)
-        this.homeStore = new HomeStore(this)
+        this.catalogStore = new CatalogStore(this);
+        this.authorizeStore = new AuthorizeStore(this);
+        this.landingStore = new LandingStore(this);
+        this.homeStore = new HomeStore(this);
     }
 }
 
-
 // FIXME add default store value
-export const AppContext = createContext<RootStore>(
-{catalogStore: new CatalogStore(new RootStore()),
-        authorizeStore: new AuthorizeStore(new RootStore()),
-        landingStore: new LandingStore(new RootStore()),
-        homeStore: new HomeStore(new RootStore()),
-        routeStore: new RouteStore(),
-})
+export const AppContext = createContext<RootStore>({
+    catalogStore: new CatalogStore(new RootStore()),
+    authorizeStore: new AuthorizeStore(new RootStore()),
+    landingStore: new LandingStore(new RootStore()),
+    homeStore: new HomeStore(new RootStore()),
+    routeStore: new RouteStore(),
+});

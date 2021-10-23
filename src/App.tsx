@@ -1,15 +1,15 @@
-import React from 'react';
-import './App.scss'
+import React from "react";
+import "./App.scss";
 
 import PageRouter from "./pages/PageRouter";
-import {AppContext, RootStore, enableStoreLogging} from "./store";
+import { AppContext, RootStore, enableStoreLogging } from "./store";
 
-enableStoreLogging()
+enableStoreLogging();
 
 export default function App() {
-    return <AppContext.Provider value={new RootStore}>
-        <PageRouter/>
-    </AppContext.Provider>
+    return (
+        <AppContext.Provider value={new RootStore()}>
+            <PageRouter />
+        </AppContext.Provider>
+    );
 }
-
-

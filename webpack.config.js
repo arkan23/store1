@@ -2,6 +2,7 @@ const path = require('path');
 const process = require('process');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ESLintWebpackPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
     mode: 'development',
@@ -14,11 +15,6 @@ module.exports = {
     },
     module: {
         rules: [
-            {
-                test: /\.js$/,
-                enforce: 'pre',
-                use: ['source-map-loader'],
-            },
             {
                 test: /\.(ts|tsx)?$/,
                 use: 'ts-loader',
@@ -41,11 +37,11 @@ module.exports = {
         path: path.resolve(__dirname, 'dist')
     },
     plugins: [
-        new webpack.ProvidePlugin({
-            process: 'process/browser',
-        }),
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'public', 'index.html')
+        }),
+        new ESLintWebpackPlugin({
+            extensions: ['ts']
         })
     ],
     devServer: {
