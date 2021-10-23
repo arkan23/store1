@@ -1,12 +1,12 @@
-import React, { useContext } from "react";
-import { observer } from "mobx-react";
+import React, {useContext} from 'react';
+import {observer} from 'mobx-react';
 
-import { AppContext } from "../store";
+import {AppContext} from '../store';
 
 const Landing = observer(() => {
     const appStore = useContext(AppContext);
     return (
-        <div className={"LandingWrapper"}>
+        <div className={'LandingWrapper'}>
             <div className='container'>
                 <div className='row'>
                     <div className='col-4'>

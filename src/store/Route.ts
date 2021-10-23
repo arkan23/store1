@@ -1,7 +1,7 @@
-import { makeAutoObservable } from "mobx";
+import {makeAutoObservable} from 'mobx';
 
 class RouteStore {
-    currentRoute = "";
+    currentRoute = '';
     routeHistoryList: string[] = [];
     constructor() {
         makeAutoObservable(this);

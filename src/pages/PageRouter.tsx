@@ -1,10 +1,10 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import React from 'react';
+import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 
-import Home from "./Home";
-import Catalog from "./Catalog";
-import Landing from "./Landing";
-import Authorize from "./Authorization";
+import Home from './Home';
+import Catalog from './Catalog';
+import Landing from './Landing';
+import Authorize from './Authorization';
 
 export default function PageRouter() {
     return (

@@ -1,5 +1,5 @@
-import { makeAutoObservable } from "mobx";
-import { RootStore } from "../index";
+import {makeAutoObservable} from 'mobx';
+import {RootStore} from '../index';
 
 class CatalogStore {
     counter = 0;

@@ -1,13 +1,13 @@
-import { createContext } from "react";
-import { enableLogging } from "mobx-logger";
+import {createContext} from 'react';
+import {enableLogging} from 'mobx-logger';
 
 // import store component
-import CatalogStore from "./pages/Catalog";
-import AuthorizeStore from "./pages/Authorize";
-import LandingStore from "./pages/Landing";
-import HomeStore from "./pages/Home";
+import CatalogStore from './pages/Catalog';
+import AuthorizeStore from './pages/Authorize';
+import LandingStore from './pages/Landing';
+import HomeStore from './pages/Home';
 
-import RouteStore from "./Route";
+import RouteStore from './Route';
 
 // import {defaultValues} from './Models'
 

@@ -1,10 +1,10 @@
-import { makeAutoObservable } from "mobx";
-import { RootStore } from "../index";
-import { Models } from "../../interface";
+import {makeAutoObservable} from 'mobx';
+import {RootStore} from '../index';
+import {Models} from '../../interface';
 
 class AuthorizeStore {
-    inputLogin = "";
-    inputPassword = "";
+    inputLogin = '';
+    inputPassword = '';
     authorizationResponse: Models.IAuthorizationResponse;
     rootStore: RootStore;
     constructor(rootStore: RootStore) {

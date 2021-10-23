@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-namespace
 export namespace Enums {
-  export type Phase = "Never" | "InProgress" | "Success" | "Failure";
+  export type Phase = 'Never' | 'InProgress' | 'Success' | 'Failure';
 }
 // eslint-disable-next-line @typescript-eslint/no-namespace
 export namespace Models {

@@ -1,9 +1,9 @@
-import { Models } from "../interface";
+import {Models} from '../interface';
 
 export class DefaultValues {
     IAuthorizeStore: Models.IAuthorizeStore = {
-        inputLogin: "",
-        inputPassword: "",
+        inputLogin: '',
+        inputPassword: '',
         authorizationResponse: undefined,
     };
 }
