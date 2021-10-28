@@ -4,6 +4,10 @@ export namespace Enums {
 }
 // eslint-disable-next-line @typescript-eslint/no-namespace
 export namespace Models {
+  export interface IResponse<T> {
+    data: T,
+    cachedDate: Date,
+  }
   export interface IError {
     errorCode: string | undefined;
     errorMessage: string | undefined;
@@ -13,8 +17,12 @@ export namespace Models {
     phase: Enums.Phase | undefined;
     error: IError;
   }
+  export interface IAuthorizationRequest {
+    login: string;
+    password: string;
+  }
   export interface IAuthorization {
-    fio: string | undefined;
+    fio: string | undefined
     login: string | undefined;
     email: string | undefined;
   }
