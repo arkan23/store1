@@ -1,4 +1,10 @@
-import {Models} from '../interface';
+import {Models} from '@types';
+import * as settings from './settings';
+
+const baseUrl = settings.url
+
+export const authorizationUrl = `${baseUrl}/api/authorization`
+export const productListUrl = `${baseUrl}/api/products`
 
 const requestBuilder = (method: string, requestData: any, headers: any) => {
     const sessionCode: string | undefined = sessionStorage.getItem('sessionCode')
@@ -39,7 +45,7 @@ export const call = <T, TB>(
             failure: (response: Models.IError) => void) => void) | null,
     headers: any = {},
     requestData: TB | null,
-    callbackTimeout?: () => any,
+    // callbackTimeout?: () => any,
 ) => {
     // Use mock object
     if (mock) {

@@ -1,6 +1,6 @@
 import {makeAutoObservable} from 'mobx';
-import {RootStore} from '../index';
-import {Models} from '../../interface';
+import {RootStore} from '@store';
+import {Models} from '@types';
 
 import * as util from '../../common/util'
 
@@ -19,8 +19,8 @@ class AuthorizeStore {
         // END additional fetch logic
         this.authorization = {info: undefined, phase: 'InProgress', error: undefined}
         util.call<Models.IAuthorizationResponse, Models.IAuthorizationRequest>(
-            'api/authorize',
-            (response) => {
+            util.authorizationUrl,
+            (response: Models.IResponse<Models.IAuthorizationResponse>) => {
                 this.authorization = {info: response.data.info, phase: 'Success', error: undefined}
                 // START additional fetch logic
 

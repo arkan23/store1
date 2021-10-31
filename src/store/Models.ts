@@ -1,4 +1,4 @@
-import {Models} from '../interface';
+import {Models} from '@types';
 
 export class DefaultValues {
     IAuthorizeStore: Models.IAuthorizeStore = {

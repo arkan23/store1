@@ -28,6 +28,9 @@
  //       "prettier"
     ],
     "rules": {
+        "import/no-unresolved": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "no-throw-literal": "off",
         "no-console": "error",
         "semi": "off",
         "indent": ["error", 4],

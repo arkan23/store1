@@ -1,8 +1,11 @@
 const path = require('path');
 const process = require('process');
 const webpack = require('webpack');
+const dotenv = require('dotenv')
+const {ProvidePlugin, DefinePlugin} = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ESLintWebpackPlugin = require('eslint-webpack-plugin');
+const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer');
 
 module.exports = {
     mode: 'development',
@@ -11,6 +14,12 @@ module.exports = {
     },
     target: 'web',
     resolve: {
+        alias: {
+            '@': path.resolve(__dirname, 'src'),
+            '@types': path.resolve(__dirname, 'src/interface'),
+            '@store': path.resolve(__dirname, 'src/store/index'),
+            '@util': path.resolve(__dirname, 'src/common/util')
+        },
         extensions: ['.ts', '.tsx', '.js']
     },
     module: {
@@ -42,7 +51,14 @@ module.exports = {
         }),
         new ESLintWebpackPlugin({
             extensions: ['ts']
-        })
+        }),
+        // new BundleAnalyzerPlugin(),
+        new DefinePlugin({
+            'process.env': JSON.stringify(dotenv.config().parsed)
+        }),
+        new ProvidePlugin({
+            process: 'process/browser',
+        }),
     ],
     devServer: {
         static: {

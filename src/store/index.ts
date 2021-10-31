@@ -22,7 +22,7 @@ export const enableStoreLogging = () => {
         compute: true,
     };
 
-    enableLogging(config);
+    enableLogging(config)
 };
 
 // Set context store
@@ -38,8 +38,8 @@ export class RootStore {
     constructor() {
         this.catalogStore = new CatalogStore(this);
         this.authorizeStore = new AuthorizeStore(this);
-        this.landingStore = new LandingStore(this);
-        this.homeStore = new HomeStore(this);
+        this.landingStore = new LandingStore(this)
+        this.homeStore = new HomeStore(this)
     }
 }
 
